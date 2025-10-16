@@ -42,9 +42,7 @@ class AlphaBetaAgent:
         self.total_captures: int = 0
         self._checked_first_move: bool = False
 
-    # -----------------------------
-    # Public API expected by course harness
-    # -----------------------------
+
     def get_input(self, go, piece_type: int) -> Coord | str:
         """
         Decide the next move for `piece_type` on the given `go` state.
@@ -284,12 +282,12 @@ class AlphaBetaAgent:
         return aggr > 3
 
 
-# Optional CLI hook (kept commented to avoid importing course files by default)
-# if __name__ == "__main__":
-#     N = 5
-#     piece_type, previous_board, board = readInput(N)
-#     go = GO(N)
-#     go.set_board(piece_type, previous_board, board)
-#     agent = AlphaBetaAgent(search_depth=3, board_size=N, debug=True)
-#     action = agent.get_input(go, piece_type)
-#     writeOutput(action)
+ 
+ if __name__ == "__main__":
+     N = 5
+     piece_type, previous_board, board = readInput(N)
+     go = GO(N)
+     go.set_board(piece_type, previous_board, board)
+     agent = AlphaBetaAgent(search_depth=3, board_size=N, debug=True)
+     action = agent.get_input(go, piece_type)
+     writeOutput(action)
